@@ -177,7 +177,7 @@ public class MessageDAOImpl implements MessageDAO {
 				.setString(0, username).setString(1, tag).uniqueResult();
 	}
 
-	@Override
+	
 	public boolean removeMessage(Message message) {
 		
 		try {

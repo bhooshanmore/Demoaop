@@ -29,6 +29,7 @@ public class UserAuthController {
 	public ResponseEntity<User> authenticate(@RequestBody User user, HttpSession session) {
 
 		if (userDAO.validate(user.getUsername(), user.getPassword())) {
+			System.out.println("inside");
 			User u = userDAO.get(user.getUsername());
 			session.setAttribute("loggedInUser", u);
 			session.setAttribute("loggedInUserName", u.getUsername());
