@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.model;
+package com.stackroute.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,8 +16,7 @@ public class User {
 	private String name;
 	private String password;
 	
-	public User() {
-		
+	public User() {		
 	}
 	
 	public User(String username, String name, String password) {

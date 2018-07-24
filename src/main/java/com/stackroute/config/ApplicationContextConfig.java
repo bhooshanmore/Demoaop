@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.config;
+package com.stackroute.config;
 
 import java.util.Properties;
 
@@ -6,7 +6,6 @@ import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +15,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.stackroute.activitystream.aspect.LoggingAspect;
+import com.stackroute.aspect.LoggingAspect;
 
 
 @Configuration
@@ -49,7 +48,7 @@ public class ApplicationContextConfig {
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
-		sessionBuilder.scanPackages("com.stackroute.activitystream.model");
+		sessionBuilder.scanPackages("com.stackroute.model");
 		return sessionBuilder.buildSessionFactory();
 	}
 

@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.stackroute.activitystream</groupId>
-	<artifactId>ActivityStream-step4</artifactId>
+	<groupId>com.stackroute</groupId>
+	<artifactId>DemoAOP</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ActivityStream-step4 Maven Webapp</name>
@@ -167,12 +167,12 @@
 					<version>2.4</version>
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>ActivityStream-step4</warName>
+						<warName>DemoAOP</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>ActivityStream-step4</finalName>
+		<finalName>DemoAOP</finalName>
 	</build>
 </project>

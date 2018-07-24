@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.daoimpl;
+package com.stackroute.daoimpl;
 
 import java.util.List;
 
@@ -9,23 +9,21 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.stackroute.activitystream.dao.UserDAO;
-import com.stackroute.activitystream.model.User;
+import com.stackroute.dao.UserDAO;
+import com.stackroute.model.User;
 
 @Repository("userDAO")
 @Transactional
-public class UserDAOImpl implements UserDAO{
-	
+public class UserDAOImpl implements UserDAO {
+
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	public UserDAOImpl(SessionFactory sessionFactory)
-	{
-		this.sessionFactory=sessionFactory;
+
+	public UserDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
-	
-	private Session getCurrentSession()
-	{
+
+	private Session getCurrentSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
@@ -65,38 +63,34 @@ public class UserDAOImpl implements UserDAO{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<User> list() {
 		return getCurrentSession().createQuery("from User").list();
 	}
 
 	public boolean validate(String id, String password) {
-	User user=	(User) getCurrentSession().createQuery("from User where id = ? and password = ?")
-		.setString(0,id)
-		.setString(1,password)
-		.uniqueResult();
-	
-	if(user==null)
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+		@SuppressWarnings("deprecation")
+		User user = (User) getCurrentSession().createQuery("from User where id = ? and password = ?").setString(0, id)
+				.setString(1, password).uniqueResult();
+
+		if (user == null) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	public User get(String id) {
 		return (User) getCurrentSession().get(User.class, id);
-			
 	}
-	
+
 	public boolean exists(String id) {
-		User user=(User) getCurrentSession().get(User.class, id);
-		if(user!=null)
+		User user = (User) getCurrentSession().get(User.class, id);
+		if (user != null)
 			return true;
 		else
 			return false;
-			
+
 	}
 
 }

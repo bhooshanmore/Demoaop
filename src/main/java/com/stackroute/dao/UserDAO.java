@@ -1,8 +1,8 @@
-package com.stackroute.activitystream.dao;
+package com.stackroute.dao;
 
 import java.util.List;
 
-import com.stackroute.activitystream.model.User;
+import com.stackroute.model.User;
 
 public interface UserDAO {
 

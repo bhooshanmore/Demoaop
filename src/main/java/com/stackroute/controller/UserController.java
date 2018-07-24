@@ -1,8 +1,6 @@
-package com.stackroute.activitystream.controller;
+package com.stackroute.controller;
 
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stackroute.activitystream.dao.UserDAO;
-import com.stackroute.activitystream.model.User;
+import com.stackroute.dao.UserDAO;
+import com.stackroute.model.User;
 
 @RestController
 @RequestMapping("/api/user")

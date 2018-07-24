@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.config;
+package com.stackroute.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

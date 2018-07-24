@@ -1,4 +1,4 @@
-package com.stackroute.activitystream.controller;
+package com.stackroute.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
