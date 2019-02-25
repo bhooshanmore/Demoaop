@@ -35,7 +35,9 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<User> getUser(@PathVariable("username") String username) {
+	public ResponseEntity<User> getUser(@PathVariable("username") String username) throws Exception {
+		
+		/*
 		User user = userDAO.get(username);
 		if (user == null) {
 			
@@ -43,6 +45,10 @@ public class UserController {
 			
 		}
 		return new ResponseEntity<User>(user, HttpStatus.OK);
+		*/
+		
+		throw new Exception();
+		
 	}
 
 	@PostMapping
